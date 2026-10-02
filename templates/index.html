@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Northlight HR Assistant</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body><div class="app">
+<aside class="side" id="side">
+ <div class="brand"><div class="logo"><svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 6.6L21 11l-6.6 2.4L12 20l-2.4-6.6L3 11l6.6-2.4z"/></svg></div>
+ <div><h1>Northlight HR Assistant</h1><p>Ask questions about company policies. Answers are grounded in the documents.</p></div></div>
+ <div><h2>Loaded documents</h2><div id="docs"></div><p class="hint">Click a document to read it and check an answer yourself.</p></div>
+ <div><h2>Sample conversations</h2><div id="smps"></div></div>
+ <button class="clear" id="clear">New chat</button>
+</aside>
+<div class="scrim" id="scrim"></div>
+<main class="main">
+ <div class="top"><button class="ib" id="menu" aria-label="Open documents"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button><button class="ib" id="theme" aria-label="Toggle theme">◐</button></div>
+ <div id="chat"><div class="wrap" id="wrap"></div></div>
+ <div class="bar2"><div class="in"><textarea id="q" rows="1" placeholder="Ask about a company policy…"></textarea><button class="send" id="send" aria-label="Send"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg></button></div><p class="foot">Enter to send · Shift+Enter for a new line</p></div>
+</main>
+<section class="view" id="view" aria-label="Document viewer"><div class="vh"><div><b id="vt"></b><small id="vf"></small></div><button class="ib" id="vc" aria-label="Close">✕</button></div><div class="vb" id="vb"></div><div class="vnote">Text extracted from the original PDF. The highlighted passage is what the answer relied on.</div></section>
+</div>
+<script src="{{ url_for('static', filename='app.js') }}"></script>
+</body></html>
