@@ -4,7 +4,14 @@ from pathlib import Path
 from langchain_community.document_loaders import PyMuPDFLoader
 
 from rag_chatbot_pipeline import answer
+from dotenv import load_dotenv
+load_dotenv()  # This loads variables from your .env file into os.environ
 
+import os
+from groq import Groq
+
+# Now this will successfully find your GROQ_API_KEY from the .env file
+client_llm = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
 app = Flask(__name__)
 

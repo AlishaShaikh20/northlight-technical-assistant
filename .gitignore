@@ -3,3 +3,7 @@ __pycache__/
 chroma_db/
 *.pyc
 .env
+
+ngrok.exe
+ngrok.zip
+data/
